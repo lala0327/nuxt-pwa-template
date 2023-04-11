@@ -1,3 +1,6 @@
 <template>
-  <div>init</div>
+  <div>
+    <VitePwaManifest />
+    <p>init</p>
+  </div>
 </template>
