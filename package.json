@@ -11,5 +11,13 @@
   "devDependencies": {
     "@vite-pwa/nuxt": "^0.0.7",
     "nuxt": "^3.3.3"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.8",
+    "pinia": "^2.0.34",
+    "vue-router": "^4.1.6"
   }
 }

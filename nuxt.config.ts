@@ -1,5 +1,6 @@
+
 export default defineNuxtConfig({
-    modules: ['@vite-pwa/nuxt'],
+    modules: ['@vite-pwa/nuxt', '@pinia/nuxt'],
     pwa: {
         registerType: 'autoUpdate',
         manifest: {
@@ -25,5 +26,11 @@ export default defineNuxtConfig({
                 },
             ],
         },
-    }
+    },
+    pinia: {
+        autoImports: [
+            // automatically import `defineStore`
+            'defineStore',
+        ]
+    },
   })
