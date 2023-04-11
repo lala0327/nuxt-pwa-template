@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VueButton } from "../atoms";
+import { VueButton } from "@/components/atoms";
 // props參數
 export interface ToastProps {
   id?: number | string;

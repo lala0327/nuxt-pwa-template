@@ -1,6 +1,7 @@
 
 export default defineNuxtConfig({
-    modules: ['@vite-pwa/nuxt', '@pinia/nuxt'],
+    modules: ['@vite-pwa/nuxt', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt',],
+    css: ['~/assets/css/main.css','vue-final-modal/style.css'],
     pwa: {
         registerType: 'autoUpdate',
         manifest: {
@@ -27,10 +28,18 @@ export default defineNuxtConfig({
             ],
         },
     },
+    // pinia
     pinia: {
         autoImports: [
             // automatically import `defineStore`
             'defineStore',
         ]
+    },
+    // tailwind
+    postcss: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
     },
   })
