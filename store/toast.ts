@@ -1,8 +1,13 @@
 import { defineStore } from 'pinia'
-import type { ToastProps } from "@/components/molecules/VueToast.vue";
 
-interface ToastInStore extends ToastProps {
-  duration?: number
+interface ToastInStore  {
+  id?: number | string;
+  variant: "success" | "info" | "warning" | "error";
+  title: string;
+  text: string;
+  duration?: number;
+  action?: () => void;
+  dismiss?: () => void;
 }
 
 // state Type
@@ -10,13 +15,13 @@ interface ToastState{
   toast: Array<ToastInStore>,
 }
 
-export const useMainStore = defineStore('toast', {
+export const useToastStore = defineStore('toast', {
   // a function that returns a fresh state
   state: ():ToastState => ({
     toast: [],
   }),
   actions: {
-       fireToast(payload:ToastInStore) {
+      fireToast(payload:ToastInStore) {
       // 呼叫新增 Toast 時，建立隨機碼為 ID，用於關閉該 Toast
       const id = String(payload.id || Math.random())
       const newToast = [
@@ -36,7 +41,7 @@ export const useMainStore = defineStore('toast', {
       }
     },
     // 刪除 Toast
-    dismissToast(id: ToastProps['id']) {
+    dismissToast(id: ToastInStore['id']) {
       if (id) this.toast = this.toast.filter(r => id !== r.id);
       else this.toast = [];
     },

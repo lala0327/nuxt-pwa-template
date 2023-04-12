@@ -2,8 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg-color: #ffffff;
+    --bg-reverse-color: #353535;
+    --text-color:#353535;
+    --text-reverse-color: #ffffff;
+    --border-color:#d9d9d9;
+    --border-reverse-color:#353535;
+}
+
+.dark{
+    --bg-color: #353535;
+    --bg-reverse-color: #ffffff;
+    --text-color:#ffffff;
+    --text-reverse-color: #353535;
+    --border-color:#d9d9d9;
+    --border-reverse-color:#353535;
+}
+
 html,
 body,
-#app {  
-    @apply h-full w-full m-0 overflow-hidden touch-manipulation ;
+#__nuxt {  
+    @apply h-full w-full m-0 overflow-hidden touch-manipulation bg-[var(--bg-color)] text-[var(--text-color)];
+}
+
+/* 自訂義 CSS */
+.center{
+    @apply flex justify-center items-center
 }

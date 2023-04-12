@@ -1,9 +1,14 @@
 
 export default defineNuxtConfig({
-    modules: ['@vite-pwa/nuxt', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt',],
-    css: ['~/assets/css/main.css','vue-final-modal/style.css'],
+    modules: ['@vite-pwa/nuxt', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt','@vueuse/nuxt'],
+    css: ['~/assets/css/main.css', 'vue-final-modal/style.css','@fortawesome/fontawesome-svg-core/styles.css'],
     pwa: {
-        registerType: 'autoUpdate',
+        disable: false,
+        includeAssets: ["/favicon.png"],
+        strategies: "injectManifest",
+        injectManifest: {
+            globPatterns: ["**/*.{js,css,html,png,json}"],
+        },
         manifest: {
             name: 'Nuxt Vite PWA',
             short_name: 'NuxtVitePWA',
@@ -39,7 +44,8 @@ export default defineNuxtConfig({
     postcss: {
         plugins: {
           tailwindcss: {},
-          autoprefixer: {},
+          autoprefixer: {}
         },
     },
+    ssr: false
   })

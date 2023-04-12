@@ -41,7 +41,7 @@ export default {
         'bg-green': variant === 'success',
         'bg-orange': variant === 'info',
         'bg-yellow': variant === 'warning',
-        'bg-err': variant === 'error',
+        'bg-red': variant === 'error',
       }"
     >
       <font-awesome-icon :icon="icons[variant]" class="text-xl text-primary" />
@@ -57,7 +57,7 @@ export default {
             'text-green': variant === 'success',
             'text-orange': variant === 'info',
             'text-yellow': variant === 'warning',
-            'text-err': variant === 'error',
+            'text-red': variant === 'error',
           }"
         >
           {{ title || variant }}
@@ -71,7 +71,7 @@ export default {
           <font-awesome-icon icon="fa-check" class="text-green" />
         </VueButton>
         <VueButton variant="link" class="mx-2" @click="dismiss">
-          <font-awesome-icon icon="fa-times" class="text-err" />
+          <font-awesome-icon icon="fa-times" class="text-red" />
         </VueButton>
       </div>
     </div>

@@ -2,14 +2,14 @@
 // props參數
 interface VueButtonProps {
   variant?: "default" | "link"; // 顏色
-  color?: "secondary" | "outline_secondary"; // 樣式
+  color?: "default" | "outline"; // 樣式
   classes?: string;
 }
 
 // 預設參數
 withDefaults(defineProps<VueButtonProps>(), {
   variant: "default",
-  color: "secondary",
+  color: "default",
 });
 </script>
 
@@ -28,10 +28,10 @@ export default {
       variant === 'default'
         ? {
             'center rounded-md p-2 text-xl': true,
-            'bg-secondary text-primary hover:bg-secondary/90 active:ring-2 active:ring-tertiary dark:bg-primary dark:text-secondary hover:dark:bg-primary/90':
-              color === 'secondary',
-            'border-2 border-secondary bg-primary hover:bg-primary/90 active:ring-2 active:ring-tertiary dark:border-primary dark:bg-secondary':
-              color === 'outline_secondary',
+            'bg-[var(--bg-reverse-color)] text-[var(--text-reverse-color)] hover:opacity-90 active:ring-2 active:ring-[var(--border-color)]':
+              color === 'default',
+            'border-2 border-[var(--border-reverse-color)] bg-[var(--bg-color)] hover:opacity-90 active:ring-2 active:ring-[var(--border-color)]':
+              color === 'outline',
           }
         : {
             'text-secondary hover:opacity-80': variant === 'link',

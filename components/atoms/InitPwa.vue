@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { onBeforeMount, watch } from "vue";
-import { useToastStore } from "../../store/toast";
-import { usePwaStore } from "../../store/pwa";
+import { useToastStore } from "@/store/toast";
+import { usePwaStore } from "@/store//pwa";
 
-import { IOSPWAModal } from "../atoms";
+import { IOSPWAModal } from "@/components/atoms";
 import { useModal } from "vue-final-modal"; // 引入彈跳視窗
 
 const { needRefresh, updateServiceWorker } = useRegisterSW();
@@ -13,7 +13,6 @@ const pwaStore = usePwaStore();
 
 const IOSModal = useModal({
   component: IOSPWAModal,
-
 });
 
 // 若有可進行的更新，彈出更新提示
@@ -36,17 +35,14 @@ watch(
   }
 );
 // 觀察是否有安裝PWA
-watch(
-  pwaStore,
-  value => {
-    value.PwaPrompt(value.options)
-  }
-);
+watch(pwaStore, (value) => {
+  value.PwaPrompt(value.options);
+});
 
 onBeforeMount(() => {
   pwaStore.initPwa({
     iosPrompt: () => {
-      IOSModal.open()
+      IOSModal.open();
     },
     androidPrompt: () => {
       toastStore.dismissToast("pwaInstallMsg");
@@ -60,9 +56,9 @@ onBeforeMount(() => {
           toastStore.dismissToast("pwaInstallMsg");
         },
       });
-    }
-  })
-})
+    },
+  });
+});
 </script>
 
 <script lang="ts">
