@@ -18,6 +18,8 @@ const test = () => {
     },
   });
 };
+
+const { data: data } = await useFetch("/api/test");
 </script>
 
 <script>
@@ -28,6 +30,7 @@ export default {
 
 <template>
   <div class="center flex-col">
+    data 顯示測試：{{ data }}
     <div class="p-3 border m-3">
       <NuxtLink to="main">測試 NuxtLink</NuxtLink>
     </div>
