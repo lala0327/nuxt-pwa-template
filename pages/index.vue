@@ -18,8 +18,11 @@ const test = () => {
     },
   });
 };
+const addPlace = () => {
+  useFetch("/api/place");
+};
 
-const { data: data } = await useFetch("/api/test");
+const { data: data } = await useFetch("/api/place", "POST");
 </script>
 
 <script>
@@ -35,6 +38,7 @@ export default {
       <NuxtLink to="main">測試 NuxtLink</NuxtLink>
     </div>
     <VueButton @click="test" color="outline">測試安裝</VueButton>
+    <VueButton @click="addPlace" color="outline">測試add place</VueButton>
     version:0.1
   </div>
 </template>

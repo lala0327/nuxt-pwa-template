@@ -47,5 +47,11 @@ export default defineNuxtConfig({
           autoprefixer: {}
         },
     },
-    ssr: false
+    ssr: false,
+    runtimeConfig: {
+        mongoUrl: process.env.MONGO_URL,
+    },
+    nitro: {
+        plugins: ["~/server/index.ts"],
+    },
   })
