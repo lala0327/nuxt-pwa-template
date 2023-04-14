@@ -1,11 +1,11 @@
 <script setup>
 import { ModalsContainer } from "vue-final-modal";
+import { watch } from "vue";
+import { usePreferredDark } from "@vueuse/core";
 import { InitPwa } from "@/components/atoms";
 import { ToastList } from "@/components/organisms";
-import { usePreferredDark } from "@vueuse/core";
 import { useToastStore } from "@/store/toast";
-import { watch } from "vue";
-const toastStore = useToastStore();
+const ToastStore = useToastStore();
 const customTheme = usePreferredDark(); // 使用者目前主題模式
 watch(
   customTheme,
@@ -23,11 +23,11 @@ watch(
 </script>
 
 <template>
-  <VitePwaManifest />
-  <div class="flex h-full w-full flex-col items-center justify-center">
-    <NuxtPage />{{ customTheme }}
+  <div class="w-full h-full center flex-col">
+    <VitePwaManifest />
+    <NuxtPage />
+    <ModalsContainer />
+    <InitPwa />
+    <ToastList :toast-array="ToastStore.toast" />
   </div>
-  <ModalsContainer />
-  <InitPwa />
-  <ToastList :toastArray="toastStore.toast"></ToastList>
 </template>

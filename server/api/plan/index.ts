@@ -1,12 +1,12 @@
-import PlaceModel from "~/server/dbModels/Place.modal"
+import PlanModel from "~/server/dbModels/Plan.modal"
 
 export default defineEventHandler(async(e)=>{
 
     try{
-        const place =  await PlaceModel.find({})
+        const plan =  await PlanModel.find({})
         return {
             status:200,
-            statusMessage: place
+            statusMessage: plan
            }
     }catch(err){
         console.log(err)

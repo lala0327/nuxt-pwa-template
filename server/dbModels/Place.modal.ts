@@ -7,8 +7,8 @@ const schema: mongoose.Schema = new mongoose.Schema(
       required: true,
     },
     type: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     text: {
       type: String,
@@ -16,12 +16,6 @@ const schema: mongoose.Schema = new mongoose.Schema(
     detail: {
       type: String,
     },
-    day: {
-      type: Number,
-    },
-    index: {
-      type: Number,
-    }
   },
 );
 export default mongoose.model('Place', schema, "place");

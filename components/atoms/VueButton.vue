@@ -10,6 +10,7 @@ interface VueButtonProps {
 withDefaults(defineProps<VueButtonProps>(), {
   variant: "default",
   color: "default",
+  classes: "",
 });
 </script>
 
@@ -33,11 +34,9 @@ export default {
             'border-2 border-[var(--border-reverse-color)] bg-[var(--bg-color)] hover:opacity-90 active:ring-2 active:ring-[var(--border-color)]':
               color === 'outline',
           }
-        : {
-            'text-secondary hover:opacity-80': variant === 'link',
-          },
+        : { 'text-secondary hover:opacity-80': variant === 'link' },
     ]"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>

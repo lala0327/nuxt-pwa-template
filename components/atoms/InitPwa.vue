@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { onBeforeMount, watch } from "vue";
+import { useModal } from "vue-final-modal"; // 引入彈跳視窗
 import { useToastStore } from "@/store/toast";
 import { usePwaStore } from "@/store//pwa";
 
 import { IOSPWAModal } from "@/components/atoms";
-import { useModal } from "vue-final-modal"; // 引入彈跳視窗
 
 const { needRefresh, updateServiceWorker } = useRegisterSW();
 const toastStore = useToastStore();
@@ -68,5 +68,5 @@ export default {
 </script>
 
 <template>
-  <div class="hidden"></div>
+  <div class="hidden" />
 </template>

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         injectManifest: {
             globPatterns: ["**/*.{js,css,html,png,json}"],
         },
+        filename: 'sw.ts',
         manifest: {
             name: 'Nuxt Vite PWA',
             short_name: 'NuxtVitePWA',
@@ -49,7 +50,7 @@ export default defineNuxtConfig({
     },
     ssr: false,
     runtimeConfig: {
-        mongoUrl: process.env.MONGO_URL,
+        mongoUrl: process.env.MONGODB_URI,
     },
     nitro: {
         plugins: ["~/server/index.ts"],

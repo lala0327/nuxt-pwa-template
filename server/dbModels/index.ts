@@ -1,2 +1,3 @@
 import Place from "~/server/dbModels/Place.modal";
-export { Place }
+import Plan from "~/server/dbModels/Plan.modal";
+export { Place,Plan }
