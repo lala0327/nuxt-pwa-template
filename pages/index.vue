@@ -17,7 +17,7 @@ onMounted(() => {
   if (defaultStore.name) {
     router.push("/main");
   }
-  selected.value = "精緻喵";
+  selected.value = "精緻喵喵";
 });
 
 // const test = () => {
@@ -36,7 +36,7 @@ onMounted(() => {
 
 const getSeleted = (selected) => {
   defaultStore.setName(selected);
-  router.push("/main");
+  router.push("/plan");
 };
 
 // const { data: data } = await useFetch("/api/place");
@@ -59,11 +59,11 @@ export default {
     version:0.1 -->
     <select
       v-model="selected"
-      class="border border-[var(--border-color)] w-full py-1 rounded-md"
+      class="border border-[var(--border-color)] w-full py-1 rounded-md text-secondary"
     >
-      <option value="精緻喵">精緻喵</option>
-      <option value="課金喵">課金喵</option>
-      <option value="被被喵">被被喵</option>
+      <option value="精緻喵喵">精緻喵喵</option>
+      <option value="課金喵喵">課金喵喵</option>
+      <option value="被被喵喵">被被喵喵</option>
     </select>
 
     <VueButton class="my-5 w-full" @click="getSeleted(selected)">

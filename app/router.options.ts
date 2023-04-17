@@ -8,9 +8,24 @@ export default <RouterConfig> {
       component: () => import('@/pages/index.vue')
     },
     {
-        name: 'main',
-        path: '/main',
-        component: () => import('@/pages/main.vue')
+        name: 'plan',
+        path: '/plan',
+        component: () => import('~/pages/plan.vue')
+    },
+    {
+      name: 'gift',
+      path: '/gift',
+      component: () => import('~/pages/gift.vue')
+    },
+    {
+      name: 'board',
+      path: '/board',
+      component: () => import('~/pages/board.vue')
+    },
+    {
+    name: 'setting',
+    path: '/setting',
+    component: () => import('~/pages/setting.vue')
     }
   ],
 }

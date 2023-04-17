@@ -1,6 +1,10 @@
 
 export default defineNuxtConfig({
-    modules: ['@vite-pwa/nuxt', '@pinia/nuxt','@pinia-plugin-persistedstate/nuxt','@vueuse/nuxt'],
+    modules: [
+        '@vite-pwa/nuxt',
+        '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
+    ],
     css: ['~/assets/css/main.css', 'vue-final-modal/style.css','@fortawesome/fontawesome-svg-core/styles.css'],
     pwa: {
         disable: false,

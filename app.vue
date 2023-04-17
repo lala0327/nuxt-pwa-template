@@ -25,7 +25,7 @@ watch(
 <template>
   <div class="w-full h-full center flex-col">
     <VitePwaManifest />
-    <NuxtPage />
+    <NuxtLayout><NuxtPage /></NuxtLayout>
     <ModalsContainer />
     <InitPwa />
     <ToastList :toast-array="ToastStore.toast" />

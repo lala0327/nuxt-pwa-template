@@ -22,6 +22,10 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'off',
     "@typescript-eslint/no-explicit-any": ["off"],
     'vue/multi-word-component-names': 'off',
-    indent: "off"
+    indent: "off",
+    "vue/return-in-computed-property": ["error", {
+      "treatUndefinedAsUnspecified": true
+    }]
+   
   }
 }
